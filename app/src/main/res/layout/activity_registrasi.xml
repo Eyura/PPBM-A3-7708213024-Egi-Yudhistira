@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/regisbg"
+    tools:context=".Registrasi">
+
+  <ImageView
+      android:id="@+id/logo"
+      android:layout_width="match_parent"
+      android:layout_height="250dp"
+      android:src="@drawable/logo"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="100dp"
+      android:contentDescription="TODO"
+      tools:ignore="ContentDescription,HardcodedText"/>
+
+  <EditText
+      android:id="@+id/username1"
+      android:layout_width="350dp"
+      android:layout_height="50dp"
+      android:layout_below="@+id/logo"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="100dp"
+      android:background="@drawable/stylebox4"
+      android:hint="Email address"
+      android:imeOptions="actionNext"
+      android:inputType="textEmailAddress"
+      android:paddingLeft="16dp"
+      android:paddingRight="16dp"
+      android:textColor="@color/black"
+      android:textColorHint="@color/black" />
+
+  <EditText
+      android:id="@+id/password1"
+      android:layout_width="350dp"
+      android:layout_height="50dp"
+      android:layout_below="@+id/username1"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="10dp"
+      android:background="@drawable/stylebox4"
+      android:hint="Password"
+      android:imeOptions="actionDone"
+      android:inputType="textPassword"
+      android:paddingLeft="16dp"
+      android:paddingRight="16dp"
+      android:textColor="@color/black"
+      android:textColorHint="@color/black" />
+
+  <Button
+      android:id="@+id/Registrasi"
+      android:layout_width="150dp"
+      android:layout_height="50dp"
+      android:layout_below="@+id/password1"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="30dp"
+      android:background="@drawable/stylelogin"
+      android:text="Registrasi"
+      android:textSize="20sp"
+      android:textColor="@color/white"
+      android:gravity="center"/>
+
+</RelativeLayout>

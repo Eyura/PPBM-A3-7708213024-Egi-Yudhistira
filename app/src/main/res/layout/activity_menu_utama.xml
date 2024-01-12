@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuUtama">
+
+    <!-- Header Bar -->
+    <RelativeLayout
+        android:id="@+id/headbar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:background="@color/blue">
+
+        <!-- Logo -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/logo"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="75dp"
+            android:layout_height="75dp">
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:src="@drawable/logo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="ContentDescription" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Toolbar -->
+        <include layout="@layout/toolbar" />
+
+        <!-- Search Toolbar (Initially set to gone) -->
+        <include layout="@layout/search_toolbar"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <!-- Main Content -->
+    <RelativeLayout
+        android:id="@+id/scrollbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/headbar">
+
+        <!-- Image Column -->
+        <RelativeLayout
+            android:id="@+id/kolomimage1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:padding="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/image1"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/info"
+                    android:src="@drawable/kolomvideo"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <!-- Add other elements as needed -->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Use RecyclerView instead of ListView -->
+
+        </RelativeLayout>
+
+        <!-- ListView -->
+        <ListView
+            android:id="@+id/listview1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/kolomimage1"
+            android:paddingTop="16dp">
+        </ListView>
+
+        <!-- Content FrameLayout -->
+        <FrameLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottom_navigation"
+            android:layout_below="@id/listview1"
+            android:padding="16dp">
+            <!-- Your content goes here -->
+        </FrameLayout>
+
+        <!-- Bottom Navigation -->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:menu="@menu/menu"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
